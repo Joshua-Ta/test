@@ -6,7 +6,7 @@ public class StringProcessing {
         boolean changed;
         do {
             changed = false;
-            // 遍历输入字符串中的每个字符
+            // 遍历输入字符
             for (int i = 0; i < result.length(); i++) {
                 // 统计连续相同字符的数量,前提连续两位小于整体长度
                 int count = 1;
@@ -29,12 +29,12 @@ public class StringProcessing {
                     System.out.println("count = " + count);
                     System.out.println("i = " + i);
                     for (int j = 0; j < result.length(); j++) {
-                        // 如果当前位置不在需要替换的范围内，直接将字符添加到新字符串中
+                        // 不在替换范围内，直接添加到new
                         if (j < i - count + 1 || j >= i + 1) {
                             newResult.append(result.charAt(j));
                             System.out.println("new = " + result.charAt(j));
                         } else if (j == i - count + 1 && replacement!= ' ') {
-                            // 如果当前位置是替换后的第一个位置，且有可替换的字符，将替换后的字符添加到新字符串中
+                            // 在范围且有值，直接添加到中间
                             newResult.append(replacement);
                         }
                     }
